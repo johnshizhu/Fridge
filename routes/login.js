@@ -3,6 +3,7 @@ const router = express.Router()
 const dbOperation = require('../dbFiles/dbOperation')
 const { user } = require('../dbFiles/dbConfig')
 const bodyParser = require('body-parser')
+const bcrypt = require('bcrypt')
 
 router.use(express.urlencoded({ extended: false }))
 
@@ -19,7 +20,7 @@ router.post('/', (req,res) => {
     // retrieve password from the database by using the username
     dbOperation.getPassword(inUsername).then(result => {
         dbPassword = result.recordset[0]['password']
-        if (inPassword == dbPassword) {
+        if (bcrypt.compare(inPassword, dbPassword)) {
             //res.redirect('/dashboard')
             console.log('User logged in with information ' + inUsername + ' ' + inPassword)
             loginCondition = true

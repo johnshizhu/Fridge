@@ -4,6 +4,9 @@ const User = require('../dbFiles/user')
 const dbOperation = require('../dbFiles/dbOperation')
 const { user } = require('../dbFiles/dbConfig')
 const bodyParser = require('body-parser')
+const bcrypt = require('bcrypt')
+
+const saltRounds = 10
 
 router.use(express.urlencoded({ extended: false }))
 

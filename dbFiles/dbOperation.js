@@ -1,6 +1,9 @@
 //organized place to put database specific commands into
-const config                = require('./dbConfig')
-const sql                   = require('mssql');
+const config = require('./dbConfig')
+const sql = require('mssql')
+const bcrypt = require('bcrypt')
+
+const saltRounds = 10;
 
 //get all users function
 const getUsers = async() => {
@@ -18,10 +21,14 @@ const getUsers = async() => {
 // Create user function
 const createUser = async(user) => {
     try {
+        const salt = await bcrypt.genSalt()
+        const hashPass = await bcrypt.hash(user.password, salt)
         let pool = await sql.connect(config);
+        // console.log(hashPass) // hashed password created
+        // console.log(user.password)
         let users = pool.request()
         .query(`INSERT INTO users VALUES
-        ('${user.first_name}','${user.last_name}',${user.age},'${user.sex}','${user.username}','${user.password}')
+        ('${user.first_name}','${user.last_name}',${user.age},'${user.sex}','${user.username}','${hashPass}')
         `)
         return users;
     }
