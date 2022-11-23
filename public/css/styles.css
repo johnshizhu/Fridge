@@ -1,0 +1,64 @@
+/* General Styles */
+ol,ul {
+	list-style: none;
+}
+* {
+	font-family: sans-serif;
+}
+
+/* Top */
+#top {
+	background: black;
+}
+
+/* bottom */
+#bottom {
+	background: black;
+}
+
+/* Navigation bar */
+#dashboardNav {
+	margin: 10px;
+	width: 900px;
+	font-family: sans-serif;
+}
+#dashboardNav li {
+	display:block;
+	width:120px;
+	float:left;
+	margin-left:2px;
+	border:1px solid #000;
+}
+#dashboardNav a {
+	display:block;
+	padding:3px;
+	text-decoration:none;
+	background-color:#fff;
+	color:#009;
+}
+#dashboardNav a:hover {
+	background-color:#009;
+	color:#fff;
+}
+
+/* Home Page Styles */
+#home-page {
+	color: white;
+	background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(https://bio.unc.edu/wp-content/uploads/sites/353/2011/08/uncgenomesciencelab_1400x800_tomrossiter_05jpg.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 600px;
+	text-align: center;
+	
+}
+#home-page a {
+	background: white;
+}
+#home-title {
+	text-align: center;
+
+}
+#home-desc {
+	text-align: center;
+}
+

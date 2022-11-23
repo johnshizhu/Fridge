@@ -1,0 +1,35 @@
+NEW BOX
+<div class="container">
+    <form action="/newBox" method="POST" class="form" id="newBox">
+        <h1 class="form__title">Create a New Box</h1>
+        <div class="form__input-group">
+            <input type="text" class="form__input" name="newBoxName" autofocus placeholder="Enter Box Name">
+            <input type="text" class="form__input" name="newBoxDate" autofocus placeholder="Enter Box Date">
+            <input type="text" class="form__input" name="newBoxSize" autofocus placeholder="Enter Box Size">
+            <input type="text" class="form__input" name="newBoxFridge" autofocus placeholder="Enter Fridge Name">
+            <input type="text" class="form__input" name="newBoxLocation" autofocus placeholder="Enter Box Location">
+        </div>
+        <button class="form__button" type="submit">Create</button>
+    </form>
+    <div>
+        <h3>All Fridges</h3>
+        <table border="1">
+            <tr>
+                <th>Number</th>
+                <th>fridge_name</th>
+            </tr>
+            <%
+            var i=1
+            userData.recordset.forEach(function(data){
+            %>
+            <tr>
+                <td><%=i; %></td>
+                <td><%=data.fridge_name %></td>
+            </tr>
+            <%  i++; }) %>
+           
+    
+        </table> 
+    </div>
+    <a href="dashboard">Return to Dashboard</a>
+</div>

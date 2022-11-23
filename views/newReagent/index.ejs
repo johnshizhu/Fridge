@@ -1,0 +1,33 @@
+<div class="container">
+    <form action="/newReagent" method="POST" class="form" id="newReagent">
+        <h1 class="form__title">Create a New Reagent</h1>
+        <div class="form__input-group">
+            <input type="text" class="form__input" name="newReagentName" autofocus placeholder="Enter Reagent Name">
+            <input type="text" class="form__input" name="newReagentDate" autofocus placeholder="Enter Reagent Date">
+            <input type="text" class="form__input" name="newReagentSeq" autofocus placeholder="Enter Reagent Sequence">
+            <input type="text" class="form__input" name="newReagentBox" autofocus placeholder="Enter Reagent Box">
+        </div>
+        <button class="form__button" type="submit">Create</button>
+    </form>
+    <a href="dashboard">Return to Dashboard</a>
+    <div>
+        <h3>All Box Names</h3>
+        <table border="1">
+            <tr>
+                <th>Number</th>
+                <th>Box Name</th>
+            </tr>
+            <%
+            var i=1
+            userData.recordset.forEach(function(data){
+            %>
+            <tr>
+                <td><%=i; %></td>
+                <td><%=data.box_name %></td>
+            </tr>
+            <%  i++; }) %>
+           
+    
+        </table> 
+    </div>
+</div>

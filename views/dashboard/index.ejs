@@ -1,0 +1,36 @@
+<h1>WELCOME TO YOUR FRIDGE DASHBOARD</h1>
+
+<ul id="dashboardNav">
+    <li><a href="newFridge">Create Fridge</a></li>
+    <li><a href="newBox">Create Box</a></li>
+    <li><a href="newReagent">Create Reagent</a></li>
+    <li><a href="">Edit Fridge</a></li>
+    <li><a href="">Edit Box</a></li>
+    <li><a href="/dashboard/account">Account</a></li>
+</ul>
+<br>
+<h2>SEARCH GOES HERE</h2>
+<div>
+    <table border="1">
+        <tr>
+            <th>Number</th>
+            <th>reagent_name</th>
+            <th>reagent_date</th>
+            <th>reagent_seq</th>
+        </tr>
+        <%
+        var i=1
+        userData.recordset.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+            <td><%=data.reagent_name %></td>
+            <td><%=data.reagent_date %></td>
+            <td><%=data.reagent_seq %></td>
+        </tr>
+        <%  i++; }) %>
+       
+
+    </table>
+ 
+</div>
