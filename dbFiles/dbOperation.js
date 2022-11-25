@@ -111,7 +111,7 @@ const getUserReagents = async(loginID) => {
     try {
         let pool = await sql.connect(config);
         //console.log(loginID + " This is the loginID")
-        let reagents = pool.request().query(`SELECT reagent_name, reagent_date, reagent_seq FROM reagents WHERE reagent_user = ${loginID}`)
+        let reagents = pool.request().query(`SELECT reagent_name, reagent_date, reagent_seq, reagent_box FROM reagents WHERE reagent_user = ${loginID}`)
         return reagents;
     }
     catch(error) {
@@ -210,6 +210,85 @@ const changePass = async(newPass, username) => {
     }
 }
 
+//GET BOX NAME BASED ON BOX ID
+const getBoxName = async(id) => {
+    try {
+        let pool = await sql.connect(config)
+        let boxName = pool.request().query(`SELECT box_name FROM boxes WHERE box_id = ${id}`)
+        return boxName
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+//GET FRIDGE NAME BASED ON FRIDGE ID
+const getFridgeName = async(id) => {
+    try {
+        let pool = await sql.connect(config)
+        let fridgeName = pool.request().query(`SELECT fridge_name FROM fridges WHERE box_id = ${id}`)
+        return fridgeName
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+//GET REAGENT INFORMATION AND BOX AND FRIDGE BASED ON loginID
+const getReagentInfo = async(id) => {
+    try {
+        let pool = await sql.connect(config)
+        let reagentInfo = pool.request().query(`
+        SELECT reagent_name, reagent_date, reagent_seq, box_name, fridge_name
+        FROM reagents 
+        INNER JOIN boxes ON (reagents.reagent_box = boxes.box_id)
+        INNER JOIN fridges ON (boxes.box_fridge = fridges.fridge_id)
+        WHERE reagent_user = ${id}
+        `)
+        return reagentInfo
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+//GET REAGENT INFORMATION AND BOX AND FRIDGE BASED ON loginID and NAME
+const getReagentInfoName = async(id, name) => {
+    try {
+        let pool = await sql.connect(config)
+        let reagentInfo = pool.request().query(`
+        SELECT reagent_name, reagent_date, reagent_seq, box_name, fridge_name
+        FROM reagents 
+        INNER JOIN boxes ON (reagents.reagent_box = boxes.box_id)
+        INNER JOIN fridges ON (boxes.box_fridge = fridges.fridge_id)
+        WHERE reagent_user = ${id}
+        AND reagent_name LIKE '%${name}%'
+        `)
+        return reagentInfo
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
+//GET REAGENT INFORMATION AND BOX AND FRIDGE BASED ON loginID and SEQUENCE
+const getReagentInfoSeq = async(id, seq) => {
+    try {
+        let pool = await sql.connect(config)
+        let reagentInfo = pool.request().query(`
+        SELECT reagent_name, reagent_date, reagent_seq, box_name, fridge_name
+        FROM reagents 
+        INNER JOIN boxes ON (reagents.reagent_box = boxes.box_id)
+        INNER JOIN fridges ON (boxes.box_fridge = fridges.fridge_id)
+        WHERE reagent_user = ${id}
+        AND reagent_seq LIKE '%${seq}%'
+        `)
+        return reagentInfo
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
 
 module.exports = {
     getUsers,
@@ -226,5 +305,10 @@ module.exports = {
     createReagent,
     getUserBoxes,
     getUsername,
-    changePass
+    changePass,
+    getBoxName,
+    getFridgeName,
+    getReagentInfo,
+    getReagentInfoName,
+    getReagentInfoSeq
 }

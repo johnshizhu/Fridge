@@ -10,6 +10,24 @@
 </ul>
 <br>
 <h2>SEARCH GOES HERE</h2>
+<div class="form-container">
+    <form action="/dashboard" method="POST" class="form">
+        <p>Search by Name</p>
+        <input name="nameSearch" type="text" class="input" placeholder="search by name">
+        <button id="submit" class="submit-name">submit</button>
+    </form>
+    <form action="/dashboard" method="POST" class="form" id="seq-search">
+        <p>Search by Sequence</p>
+        <input type="text" class="input" name="seqSearch" placeholder="search by sequence">
+        <button id="submit" class="submit-seq">submit</button>
+    </form>
+    <a href="dashboard">clear</a>
+</div>
+<div class="results-container">
+    <ul class="results-list" id="list">
+
+    </ul>
+</div>
 <div>
     <table border="1">
         <tr>
@@ -17,6 +35,8 @@
             <th>reagent_name</th>
             <th>reagent_date</th>
             <th>reagent_seq</th>
+            <th>box_name</th>
+            <th>fridge_name</th>
         </tr>
         <%
         var i=1
@@ -27,6 +47,8 @@
             <td><%=data.reagent_name %></td>
             <td><%=data.reagent_date %></td>
             <td><%=data.reagent_seq %></td>
+            <td><%=data.box_name %></td>
+            <td><%=data.fridge_name %></td>
         </tr>
         <%  i++; }) %>
        
