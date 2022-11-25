@@ -9,10 +9,9 @@
         </div>
         <button class="form__button" type="submit">Create</button>
     </form>
-    <a href="dashboard">Return to Dashboard</a>
     <div>
         <h3>All Box Names</h3>
-        <table border="1">
+        <table id="dashboard_table" border="1">
             <tr>
                 <th>Number</th>
                 <th>Box Name</th>
@@ -26,8 +25,9 @@
                 <td><%=data.box_name %></td>
             </tr>
             <%  i++; }) %>
-           
-    
         </table> 
     </div>
+    <p>
+        <a class="form__link" href="dashboard">Return to Dashboard</a>
+    </p>
 </div>

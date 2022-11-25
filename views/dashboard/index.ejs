@@ -1,58 +1,50 @@
-<h1>WELCOME TO YOUR FRIDGE DASHBOARD</h1>
-
-<ul id="dashboardNav">
-    <li><a href="newFridge">Create Fridge</a></li>
-    <li><a href="newBox">Create Box</a></li>
-    <li><a href="newReagent">Create Reagent</a></li>
-    <li><a href="">Edit Fridge</a></li>
-    <li><a href="">Edit Box</a></li>
-    <li><a href="/dashboard/account">Account</a></li>
-</ul>
-<br>
-<h2>SEARCH GOES HERE</h2>
-<div class="form-container">
-    <form action="/dashboard" method="POST" class="form">
-        <p>Search by Name</p>
-        <input name="nameSearch" type="text" class="input" placeholder="search by name">
-        <button id="submit" class="submit-name">submit</button>
-    </form>
-    <form action="/dashboard" method="POST" class="form" id="seq-search">
-        <p>Search by Sequence</p>
-        <input type="text" class="input" name="seqSearch" placeholder="search by sequence">
-        <button id="submit" class="submit-seq">submit</button>
-    </form>
-    <a href="dashboard">clear</a>
-</div>
-<div class="results-container">
-    <ul class="results-list" id="list">
-
+<div class="dashboard">
+    <h1 id="dashboard_title">Fridge Dashboard</h1>
+    <ul id="dashboardNav">
+        <li><a href="newFridge">Create Fridge</a></li>
+        <li><a href="newBox">Create Box</a></li>
+        <li><a href="newReagent">Create Reagent</a></li>
+        <li><a href="/dashboard/account">Account</a></li>
     </ul>
-</div>
-<div>
-    <table border="1">
-        <tr>
-            <th>Number</th>
-            <th>reagent_name</th>
-            <th>reagent_date</th>
-            <th>reagent_seq</th>
-            <th>box_name</th>
-            <th>fridge_name</th>
-        </tr>
-        <%
-        var i=1
-        userData.recordset.forEach(function(data){
-        %>
-        <tr>
-            <td><%=i; %></td>
-            <td><%=data.reagent_name %></td>
-            <td><%=data.reagent_date %></td>
-            <td><%=data.reagent_seq %></td>
-            <td><%=data.box_name %></td>
-            <td><%=data.fridge_name %></td>
-        </tr>
-        <%  i++; }) %>
-       
-
-    </table>
- 
+    <div class="dashboard-form-container">
+        <h2>Search</h2>
+        <form action="/dashboard" method="POST">
+            <input class="search_input" name="nameSearch" type="text" placeholder="search by name">
+            <button id="submit" class="submit-name">submit</button>
+        </form>
+        <form action="/dashboard" method="POST" id="seq-search">
+            <input class="search_input" type="text" name="seqSearch" placeholder="search by sequence">
+            <button id="submit" class="submit-seq">submit</button>
+        </form>
+    </div>
+    <a id="clear__dashboard" href="dashboard">Clear Searches</a>
+    <div class="results-container">
+        <ul class="results-list" id="list">
+        </ul>
+    </div>
+    <div>
+        <table id="dashboard_table" border="1">
+            <tr>
+                <th>Number</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Sequence</th>
+                <th>Box</th>
+                <th>Fridge</th>
+            </tr>
+            <%
+            var i=1
+            userData.recordset.forEach(function(data){
+            %>
+            <tr>
+                <td><%=i; %></td>
+                <td><%=data.reagent_name %></td>
+                <td><%=data.reagent_date %></td>
+                <td><%=data.reagent_seq %></td>
+                <td><%=data.box_name %></td>
+                <td><%=data.fridge_name %></td>
+            </tr>
+            <%  i++; }) %>
+        </table>
+    </div>
 </div>

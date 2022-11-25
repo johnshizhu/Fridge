@@ -1,5 +1,4 @@
-NEW BOX
-<div class="container">
+<div class="container" id="newBoxContainer">
     <form action="/newBox" method="POST" class="form" id="newBox">
         <h1 class="form__title">Create a New Box</h1>
         <div class="form__input-group">
@@ -13,7 +12,7 @@ NEW BOX
     </form>
     <div>
         <h3>All Fridges</h3>
-        <table border="1">
+        <table id="dashboard_table" border="1">
             <tr>
                 <th>Number</th>
                 <th>fridge_name</th>
@@ -31,5 +30,7 @@ NEW BOX
     
         </table> 
     </div>
-    <a href="dashboard">Return to Dashboard</a>
+    <p>
+        <a class="form__link" href="dashboard">Return to Dashboard</a>
+    </p>
 </div>

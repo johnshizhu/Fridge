@@ -18,47 +18,169 @@ ol,ul {
 
 /* Navigation bar */
 #dashboardNav {
-	margin: 10px;
-	width: 900px;
 	font-family: sans-serif;
+	display: inline-block;
+	text-align: center;
 }
+
 #dashboardNav li {
 	display:block;
-	width:120px;
+	width:8em;
 	float:left;
-	margin-left:2px;
 	border:1px solid #000;
+	background-color:#fff;
 }
 #dashboardNav a {
 	display:block;
 	padding:3px;
 	text-decoration:none;
 	background-color:#fff;
-	color:#009;
+	color:#000;
 }
 #dashboardNav a:hover {
-	background-color:#009;
-	color:#fff;
+	background-color:lightgrey;
+	color:black;
 }
 
 /* Home Page Styles */
 #home-page {
-	color: white;
-	background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(https://bio.unc.edu/wp-content/uploads/sites/353/2011/08/uncgenomesciencelab_1400x800_tomrossiter_05jpg.jpg);
-	background-size: cover;
-	background-position: center;
-	height: 600px;
+	color: black;
 	text-align: center;
-	
 }
 #home-page a {
-	background: white;
+	background: lightgrey;
+	padding: 20px 20px 20px 20px;
+	color: black;
+	border-color: black;
+	border-radius: 30px;
+	font-size: 50px;
+	font-weight: bold;
+}
+#home-page a:hover {
+	background: lightsteelblue
+}
+#home-page a:link {
+	text-decoration: none;
 }
 #home-title {
 	text-align: center;
-
+	font-weight: 700;
+	font-size: 120px;
 }
 #home-desc {
 	text-align: center;
+	font-size: 30px;
+	margin-top: 5%;
+	margin-bottom: 10%;
 }
 
+/* Login page */
+#login_container {
+	background-color: lightsteelblue;
+	text-align: center;
+	padding: 10%;
+	margin: 10% 10% 10% 10%;
+	border-radius: 60px;
+}
+#login__title {
+	font-size: 80px;
+	font-weight: 700;
+}
+.login__input {
+	margin: 15px 0 15px 0;
+	font-size: large;
+}
+.login__text a {
+	text-decoration: none;
+	color: black;
+	font-size: large;
+	background-color: lightgrey;
+	padding: 10px;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: thin;
+	border-color: #000;
+}
+.login__text a:hover {
+	background-color: grey;
+}
+.login__button {
+	font-size: large;
+	margin-bottom: 10px;
+	padding: 3px;
+
+}
+
+/* Dashboard */
+.dashboard {
+	background-color: lightsteelblue;
+	text-align: center;
+	padding: 5% 0% 10% 0;
+	border-color:#000;
+}
+#dashboard_title {
+	font-size:70px;
+}
+#dashboard_table {
+	background-color: #fff;
+	border-collapse: collapse;
+	margin: auto auto auto auto;
+	border-color: #000;
+	table-layout: fixed;
+	border-width: 2px;
+}
+#dashboard_table td {
+	padding: 10px;
+}
+#dashboard_table th {
+	padding: 10px;
+	border-width: 1px;
+}
+#clear__dashboard {
+	background-color: whitesmoke;
+	padding: 5px;
+	border-radius:7px;
+	text-decoration: none;
+	color:#000;
+
+}
+#clear__dashboard:hover {
+	background-color: lightgrey;
+}
+.dashboard-form-container {
+	background-color: whitesmoke;
+	margin: 2% 30% 2% 30%;
+	padding: 10px;
+	border-radius: 20px;
+}
+.search_input {
+	margin: 5px;
+}
+
+/* Create Account */
+.container {
+	text-align: center;
+	background-color: lightsteelblue;
+	margin: 10% 25% 0 25%;
+	padding: 20px;
+	border-radius: 25px;
+}
+.form__input-group {
+	margin-bottom: 5px;
+}
+.form__link {
+	text-decoration: none;
+	color: black;
+	background-color: lightgrey;
+	padding: 5px;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: thin;
+	border-color: #000;
+}
+
+/* Create Fridge */
+
+/* Create Box */
+
+/* Account Manager */
