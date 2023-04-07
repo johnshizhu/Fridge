@@ -9,7 +9,8 @@ router.use(express.urlencoded({ extended: false }))
 
 //for displaying the login page
 router.get('/', (req, res) => {
-    res.render('login')
+    res.render('login', 
+    { errorMessage: ""})
 })
 
 //for logging someone in
@@ -20,21 +21,25 @@ router.post('/', (req,res) => {
     // retrieve password from the database by using the username
     dbOperation.getPassword(inUsername).then(result => {
         dbPassword = result.recordset[0]['password']
-        if (bcrypt.compare(inPassword, dbPassword)) {
-            //res.redirect('/dashboard')
-            console.log('User logged in with information ' + inUsername + ' ' + inPassword)
-            loginCondition = true
-            console.log("current loginCondition is: " + loginCondition)
-            // setting the loginID global variable
-            dbOperation.getID(inUsername).then(idResults => {
-                loginID = idResults.recordset[0]['user_id']
-                console.log('loginID is now ' + loginID)
-                res.redirect('/dashboard')
-            })
-        }
-        else {
-            console.log("Incorrect login information")
-        }
+        bcrypt.compare(inPassword, dbPassword).then(loginStatus => {
+            if (loginStatus) {
+                //res.redirect('/dashboard')
+                console.log('User logged in with information ' + inUsername + ' ' + inPassword)
+                loginCondition = true
+                console.log("current loginCondition is: " + loginCondition)
+                // setting the loginID global variable
+                dbOperation.getID(inUsername).then(idResults => {
+                    loginID = idResults.recordset[0]['user_id']
+                    console.log('loginID is now ' + loginID)
+                    res.redirect('/dashboard')
+                })
+            }
+            else {
+                console.log("Incorrect login information")
+                res.render('login',
+                { errorMessage: "Incorrect Username or Password"})
+            }
+        })
     })
 })
 

@@ -1,0 +1,45 @@
+.create-fridge-page {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+.create-fridge-box {
+    position: relative;
+    top:10em;
+    display:flex;
+    gap: 2em;
+    height: 15em;
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gainsboro;
+}
+
+.create-fridge-input {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    margin-bottom: 1em;
+    padding: .5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #F0F0F0;
+}
+.create-fridge-button {
+    padding: 0.5em;
+    background-color: #7CB9E8;
+    border: none;
+    border-radius: 5px;
+}
+.create-fridge-button:hover {
+    transition-duration: 0.3s;
+    background-color: #7ca7e8;
+}
+.create-fridge-title {
+    font-size: 2em;
+    margin-top: 0;
+    text-align: center;
+}

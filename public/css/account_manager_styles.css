@@ -1,0 +1,23 @@
+.account-manager-page {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+.account-manager-box {
+    position: relative;
+    top:10em;
+    display:flex;
+    gap: 2em;
+    height: 15em;
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gainsboro;
+}
+.account-manager-title {
+    font-size: 2em;
+    margin-top: 0;
+    text-align: center;
+}

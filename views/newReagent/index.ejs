@@ -1,33 +1,55 @@
-<div class="container">
-    <form action="/newReagent" method="POST" class="form" id="newReagent">
-        <h1 class="form__title">Create a New Reagent</h1>
-        <div class="form__input-group">
-            <input type="text" class="form__input" name="newReagentName" autofocus placeholder="Enter Reagent Name">
-            <input type="text" class="form__input" name="newReagentDate" autofocus placeholder="Enter Reagent Date">
-            <input type="text" class="form__input" name="newReagentSeq" autofocus placeholder="Enter Reagent Sequence">
-            <input type="text" class="form__input" name="newReagentBox" autofocus placeholder="Enter Reagent Box">
+<div class="create-reagent-page">
+    <div class="dashboard-nav">
+        <div class="dashboard-nav-left-box">
+            <div class="dashboard-nav-left">
+                <div class="dashboard-nav-left-image">
+                    <a href="dashboard"><img id="dashboard-fridge-icon" src="fridge-icon.png" alt="Fridge Icon"></a>
+                </div>
+                <div class="dashboard-nav-left-title">
+                    <a class="dashboard-nav-title" href="dashboard"><p>Fridge</p></a>
+                </div>
+            </div>
         </div>
-        <button class="form__button" type="submit">Create</button>
-    </form>
-    <div>
-        <h3>All Box Names</h3>
-        <table id="dashboard_table" border="1">
-            <tr>
-                <th>Number</th>
-                <th>Box Name</th>
-            </tr>
-            <%
-            var i=1
-            userData.recordset.forEach(function(data){
-            %>
-            <tr>
-                <td><%=i; %></td>
-                <td><%=data.box_name %></td>
-            </tr>
-            <%  i++; }) %>
-        </table> 
+        <div class="dashboard-nav-right-box">
+            <ul class="dashboard-nav-right">
+                <div class="dashboard-nav-right-item"><a href="newBox">Create Box</a></div>
+                <div class="dashboard-nav-right-item"><a href="newReagent">Create Reagent</a></div>
+                <div class="dashboard-nav-right-item"><a href="newFridge">Create Fridge</a></div>
+                <div class="dashboard-nav-right-item"><a href="/dashboard/account">Account</a></div>
+            </ul>
+        </div>
     </div>
-    <p>
-        <a class="form__link" href="dashboard">Return to Dashboard</a>
-    </p>
+    <div class="create-reagent-box">
+        <div class="create-reagent-input-box">
+            <form action="/newReagent" method="POST" class="form" id="newReagent">
+                <p class="create-reagent-title">Create a New Reagent</p>
+                <div class="form__input-group">
+                    <input type="text" class="create-reagent-input-line" name="newReagentName" autofocus placeholder="Enter Reagent Name">
+                    <input type="text" class="create-reagent-input-line" name="newReagentDate" autofocus placeholder="Enter Reagent Date">
+                    <input type="text" class="create-reagent-input-line" name="newReagentSeq" autofocus placeholder="Enter Reagent Sequence">
+                    <input type="text" class="create-reagent-input-line" name="newReagentBox" autofocus placeholder="Enter Reagent Box">
+                </div>
+                <button class="create-reagent-button" type="submit">Create</button>
+            </form>
+        </div>
+        <div class="create-reagent-box-list">
+            <p class="create-reagent-title">All Box Names</p>
+            <table id="dashboard_table">
+                <tr>
+                    <th>Number</th>
+                    <th>Box Name</th>
+                </tr>
+                <%
+                var i=1
+                userData.recordset.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=i; %></td>
+                    <td><%=data.box_name %></td>
+                </tr>
+                <%  i++; }) %>
+            </table> 
+        </div>
+    </div>
 </div>
+

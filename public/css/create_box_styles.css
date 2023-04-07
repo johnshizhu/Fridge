@@ -1,0 +1,58 @@
+.create-new-box-page {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+.create-new-box-container {
+    position: relative;
+    top:10em;
+    display:flex;
+    gap: 2em;
+    height: 25em;
+}
+.box-input-box {
+    width: 60%;
+    padding: 2em;
+    background-color: white;
+    box-shadow: 0 0 5px 0 gainsboro;
+    border-radius: 10px;
+}
+.box-fridge-list {
+    width: 40%;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 0 gainsboro;
+    background-color: white;
+}
+.create-box-input-box {
+    display: flex;
+    flex-direction: column;
+}
+.create-box-input {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    margin-bottom: 1em;
+    padding: .5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #F0F0F0;
+}
+.create-box-button {
+    padding: 0.5em;
+    background-color: #7CB9E8;
+    border: none;
+    border-radius: 5px;
+}
+.create-box-button:hover {
+    transition-duration: 0.3s;
+    background-color: #7ca7e8;
+}
+.create-box-title {
+    font-size: 2em;
+    margin-top: 0;
+    text-align: center;
+}

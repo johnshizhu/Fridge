@@ -15,12 +15,14 @@ const newFridgeRouter = require('./routes/newFridge')
 const { user } = require('./dbFiles/dbConfig')
 const newReagentRouter = require('./routes/newReagent')
 const changePassRouter = require('./routes/changePass')
+const accountManRouter = require('./routes/accountMan')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 app.use(express.static('public'))
+app.use(express.static('images'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false}))
 
 app.use('/', indexRouter)
@@ -31,6 +33,7 @@ app.use('/newBox', newBoxRouter)
 app.use('/newFridge', newFridgeRouter)
 app.use('/newReagent', newReagentRouter)
 app.use('/changePass', changePassRouter)
+app.use('/accountMan', accountManRouter)
 
 global.loginCondition = false
 global.loginID = null

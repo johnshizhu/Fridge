@@ -290,6 +290,20 @@ const getReagentInfoSeq = async(id, seq) => {
     }
 }
 
+//GET NAME AND LAST NAME
+const getFullName = async(id) => {
+    try {
+        let pool = await sql.connect(config)
+        let fullName = pool.request().query(`
+        SELECT first_name, last_name FROM users WHERE user_id = ${id}
+        `)
+        return fullName
+    }
+    catch(error) {
+        console.log(error)
+    }
+}
+
 module.exports = {
     getUsers,
     createUser,
@@ -310,5 +324,6 @@ module.exports = {
     getFridgeName,
     getReagentInfo,
     getReagentInfoName,
-    getReagentInfoSeq
+    getReagentInfoSeq,
+    getFullName
 }

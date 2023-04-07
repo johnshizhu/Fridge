@@ -1,0 +1,55 @@
+/* index footer styles */
+.index-footer-content-container {
+    padding: 3% 10% 5% 10%;
+    color: white;
+    background-color: #002D62;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Title Column */
+.index-footer-title-column {
+    display: flex;
+    justify-content: center;
+}
+#footer-fridge-icon {
+    filter: invert(1);
+    height: 100%;
+    max-height: 4em;
+    margin-top: 16px;
+}
+#footer-fridge-title {
+    font-size: 2em;
+    padding-left: 10px;
+}
+
+/* About column */
+.index-footer-about-column {
+    padding-top: 32px;
+    font-size: 1.5em;
+}
+
+/* Contact Column */
+.index-footer-contact-column {
+    padding-top: 32px;
+    font-size: 1.5em;
+}
+
+/* Link Styles */
+.footer-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+.footer-list-item {
+    padding-bottom: 1.5em;
+    font-size: .75em;
+}
+.footer-link {
+    color: white;
+    text-decoration: none;
+    transition-duration: .1s;
+}
+.footer-link:hover {
+    color: #7CB9E8;
+    transition-duration: .1s;
+}

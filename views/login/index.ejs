@@ -1,17 +1,20 @@
-<div class="container" id="login_container">
-    <form action="/login" method="POST" class="form" id="login">
-        <h1 class="form__title" id="login__title">Login</h1>
-        <div class="form__input-group">
-            <input type="text" class="login__input" name="logUsername" autofocus placeholder="Username">
-        </div>
-        <div class="form__input-group">
-            <input type="text" class="login__input" name="logPassword" autofocus placeholder="Password">
-            <div class="form__input-error-message"></div>
-        </div>
-        <button class="login__button" type="submit">Enter</button>
-        
-        <p class="login__text">
-            <a href="createAct" class="form__link">Don't have an account? Create account</a>
-        </p>
-    </form>
+<div class="login-page">
+    <div id="login_container">
+        <form action="/login" method="POST"  class="form" id="login-form" id="login">
+            <p id="login_title">Sign In</p>
+            <p class="login-description">Get Organized</p>
+            <div class="form_input-group">
+                <input type="text" class="login_input" name="logUsername" autofocus placeholder="Username">
+            </div>
+            <div class="form_input-group">
+                <input type="text" class="login_input" name="logPassword" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="login_button" type="submit">Enter</button>
+            <p class="new-account">
+                <a href="createAct" class="new-account-link">Don't have an account? Create account</a>
+            </p>
+            <div id="login-error-message"><%= errorMessage %></div>
+        </form>
+    </div>
 </div>

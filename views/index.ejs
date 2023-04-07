@@ -1,11 +1,83 @@
-<div id="home-page">
-    <br>
-    <h1 id="home-title">
-    Fridge
-    </h1>
-    <p id="home-desc">
-        Keep track of your fridge
-    </p>
-    <br>
-    <a href="login">Login</a>
-<div>
+<div class="nav-bar-index">
+    <div class="nav-bar-index-left">
+        <img id="fridge-icon" src="fridge-icon.png" alt="Fridge Icons">
+        <div id="fridge-title"><div id="title-child">Fridge</div></div>
+    </div>
+    <div class="nav-bar-index-right">
+        <div class="nav-bar-index-right-button">Resources</div>
+        <div class="nav-bar-index-right-button">About</div>
+        <div class="nav-bar-index-right-button">Contact</div>
+        <div class="nav-bar-index-right-button"><a id="sign-in-button" href="login">Sign In</a></div>
+    </div>
+</div>
+<div class="index-container">    
+    <div class="index-top-container">
+        <div class="index-left">
+            <div class="index-left-title-container">
+                <p class="index-left-title">Get Organized</p>
+                <p class="index-left-subtitle">Welcome to Fridge.</p>
+                <p class="index-left-title-desc">
+                    The researcher centric platform that keeps your lab 
+                    organized, accessible and navigable. 
+                </p>
+                <div class="index-left-buttons-container">
+                    <div id="get-started-button">Get Started</div>
+                    <div id="github-link">
+                        <img id="github-icon" src="github-logo.png" alt="MISSING Icon">
+                        <a href="https://github.com/johnshizhu" id="github-link-text">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="index-right">
+            <div class="typewriter">
+                <div id="type-content">
+                    <p>ADD COOL CONTENT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="index-container-two">
+        <div class="index-container-two-top">
+            <div class="index-container-two-top-left">
+                <p class="index-container-two-title">Built by researchers, for researchers</p>
+                <p class="index-container-two-subtitle">
+                    Designed with ease of use, speed, and clarity in mind
+                    for even the most complex laboratory formats.
+                </p>
+                <ul class="function-list">
+                    <li class="function-list-item" (click)="loadFridge()">Fridge</li>
+                    <li class="function-list-item" (click)="loadBox()">Box</li>
+                    <li class="function-list-item" (click)="loadReagent()" id="reagent-item">Reagent</li>
+                </ul>
+            </div>
+            <div class="index-container-two-top-right">
+                <div id="container-two-right-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="index-footer-container">
+    <div class="index-footer-content-container">
+        <div class="index-footer-title-column">
+            <img id="footer-fridge-icon" src="fridge-icon.png" alt="">
+            <p id="footer-fridge-title">Fridge</p>
+        </div>
+        <div class="index-footer-about-column">
+            About
+            <ul class="footer-list">
+                <li class="footer-list-item"><a class="footer-link" href="https://github.com/johnshizhu">Github</a></li>
+            </ul>
+        </div>
+        <div class="index-footer-contact-column">
+            Contact
+            <ul class="footer-list">
+                <li class="footer-list-item"><a class="footer-link" href="https://www.linkedin.com/in/johnshizhu/">LinkedIn</a></li>
+                <li class="footer-list-item"><a class="footer-link" href="">Personal Website</a></li>
+                <li class="footer-list-item">Email: johnshizhu@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+</div>

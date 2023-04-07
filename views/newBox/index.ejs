@@ -1,36 +1,55 @@
-<div class="container" id="newBoxContainer">
-    <form action="/newBox" method="POST" class="form" id="newBox">
-        <h1 class="form__title">Create a New Box</h1>
-        <div class="form__input-group">
-            <input type="text" class="form__input" name="newBoxName" autofocus placeholder="Enter Box Name">
-            <input type="text" class="form__input" name="newBoxDate" autofocus placeholder="Enter Box Date">
-            <input type="text" class="form__input" name="newBoxSize" autofocus placeholder="Enter Box Size">
-            <input type="text" class="form__input" name="newBoxFridge" autofocus placeholder="Enter Fridge Name">
-            <input type="text" class="form__input" name="newBoxLocation" autofocus placeholder="Enter Box Location">
+<div class="create-new-box-page">
+    <div class="dashboard-nav">
+        <div class="dashboard-nav-left-box">
+            <div class="dashboard-nav-left">
+                <div class="dashboard-nav-left-image">
+                    <a href="dashboard"><img id="dashboard-fridge-icon" src="fridge-icon.png" alt="Fridge Icon"></a>
+                </div>
+                <div class="dashboard-nav-left-title">
+                    <a class="dashboard-nav-title" href="dashboard"><p>Fridge</p></a>
+                </div>
+            </div>
         </div>
-        <button class="form__button" type="submit">Create</button>
-    </form>
-    <div>
-        <h3>All Fridges</h3>
-        <table id="dashboard_table" border="1">
-            <tr>
-                <th>Number</th>
-                <th>fridge_name</th>
-            </tr>
-            <%
-            var i=1
-            userData.recordset.forEach(function(data){
-            %>
-            <tr>
-                <td><%=i; %></td>
-                <td><%=data.fridge_name %></td>
-            </tr>
-            <%  i++; }) %>
-           
-    
-        </table> 
+        <div class="dashboard-nav-right-box">
+            <ul class="dashboard-nav-right">
+                <div class="dashboard-nav-right-item"><a href="newBox">Create Box</a></div>
+                <div class="dashboard-nav-right-item"><a href="newReagent">Create Reagent</a></div>
+                <div class="dashboard-nav-right-item"><a href="newFridge">Create Fridge</a></div>
+                <div class="dashboard-nav-right-item"><a href="/dashboard/account">Account</a></div>
+            </ul>
+        </div>
     </div>
-    <p>
-        <a class="form__link" href="dashboard">Return to Dashboard</a>
-    </p>
+    <div class="create-new-box-container">
+        <div class="box-input-box">
+            <form action="/newBox" method="POST" class="form" id="newBox">
+                <p class="create-box-title">Create a New Box</p>
+                <div class="create-box-input-box">
+                    <div class="create-box-input-line"><input type="text" class="create-box-input" name="newBoxName" autofocus placeholder="Enter Box Name"></div>
+                    <div class="create-box-input-line"><input type="text" class="create-box-input" name="newBoxDate" autofocus placeholder="Enter Box Date"></div>
+                    <div class="create-box-input-line"><input type="text" class="create-box-input" name="newBoxSize" autofocus placeholder="Enter Box Size"></div>
+                    <div class="create-box-input-line"><input type="text" class="create-box-input" name="newBoxFridge" autofocus placeholder="Enter Fridge Name"></div>
+                    <div class="create-box-input-line"><input type="text" class="create-box-input" name="newBoxLocation" autofocus placeholder="Enter Box Location"></div>
+                </div>
+                <button class="create-box-button" type="submit">Create</button>
+            </form>
+        </div>
+        <div class="box-fridge-list">
+            <p class="create-box-title">All Fridges</p>
+            <table id="dashboard_table">
+                <tr>
+                    <th>Number</th>
+                    <th>fridge_name</th>
+                </tr>
+                <%
+                var i=1
+                userData.recordset.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=i; %></td>
+                    <td><%=data.fridge_name %></td>
+                </tr>
+                <%  i++; }) %>
+            </table> 
+        </div>
+    </div>
 </div>
