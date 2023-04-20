@@ -13,5 +13,9 @@ Objects that can be created are the following:
 1. Fridge
 2. Box
 3. Reagent
+### Object Search
+Search through reagents based on name and sequence queries.
+
 <br>
+
 Information from these objects are stored in the MS SQL Server relational database. 
