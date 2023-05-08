@@ -19,3 +19,8 @@ Search through reagents based on name and sequence queries.
 <br>
 
 Information from these objects are stored in the MS SQL Server relational database. 
+
+### Run The Application Locally
+```
+npm run devStart
+```
