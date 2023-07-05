@@ -2,6 +2,11 @@
 ### Languages and Tools
 [![My Skills](https://skills.thijs.gg/icons?i=js,html,css,nodejs,)](https://skills.thijs.gg)
 
+### Dependencies
+MSSQL Server <br>
+Node <br>
+Express <br>
+
 ### Features
 Fridge is a web application designed for researchers to keep lab reagents organized and documented.
 
